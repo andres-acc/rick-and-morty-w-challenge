@@ -2,12 +2,7 @@ import { Gender } from '../helpers/enums/gender.enum';
 import { Species } from '../helpers/enums/species.enum';
 import { Status } from '../helpers/enums/status.enum';
 
-interface Origin {
-  name: string;
-  url: string;
-}
-
-interface Location {
+interface Place {
   name: string;
   url: string;
 }
@@ -19,8 +14,8 @@ export interface Character {
   species: Species;
   type: string;
   gender: Gender;
-  origin: Origin;
-  location: Location;
+  origin: Place;
+  location: Place;
   image: string;
   episode: string[];
   url: string;
