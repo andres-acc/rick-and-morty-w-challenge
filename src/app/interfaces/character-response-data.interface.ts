@@ -1,7 +1,7 @@
 import { Character } from './character.interface';
-import { Info } from './info.interface';
+import { ResponseProperty } from './response-property.interface';
 
 export interface CharacterResponseData {
-  info: Info;
+  info: ResponseProperty;
   results: Character[];
 }
