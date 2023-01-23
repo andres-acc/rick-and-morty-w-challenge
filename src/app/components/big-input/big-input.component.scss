@@ -1,0 +1,31 @@
+@import '/src/scss/colors';
+@import '/src/scss/sizes';
+
+.container {
+  position: relative;
+
+  .input {
+    border: $regular-border solid $wolox-blue;
+    border-radius: $extra-radius;
+    font-size: $regular-spacing;
+    outline: none;
+    padding: $regular-spacing 28px $regular-spacing 65px;
+    width: $full-size;
+
+    &::-webkit-search-cancel-button{
+      background-image: url('/assets/images/svg/clear-icon.svg');
+      cursor: pointer;
+      height: $extra-spacing;
+      margin-left: $regular-spacing;
+      width: $extra-spacing;
+      -webkit-appearance: none;
+    }
+  }
+
+  &::before {
+    content: url('/assets/images/svg/magnifying-glass.svg');
+    left: $regular-spacing;
+    position: absolute;
+    top: 17px;
+  }
+}
