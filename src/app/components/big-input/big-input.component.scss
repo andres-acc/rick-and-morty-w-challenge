@@ -3,6 +3,14 @@
 
 .container {
   position: relative;
+  margin: 20px auto;
+
+  &::before {
+    content: url('/assets/images/svg/magnifying-glass.svg');
+    left: $regular-spacing;
+    position: absolute;
+    top: 17px;
+  }
 
   .input {
     border: $regular-border solid $wolox-blue;
@@ -22,10 +30,22 @@
     }
   }
 
-  &::before {
-    content: url('/assets/images/svg/magnifying-glass.svg');
-    left: $regular-spacing;
+  .specie,
+  .gender {
+    border-left: 1px solid $disabled;
     position: absolute;
-    top: 17px;
+    top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    -webkit-appearance: auto;
+    width: 20%;
+  }
+
+  .specie {
+    right: $quarter;
+  }
+
+  .gender {
+    right: 2%;
   }
 }
