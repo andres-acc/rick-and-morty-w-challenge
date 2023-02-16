@@ -1,3 +1,30 @@
 <div class="container">
-  <input class="input" type="search" placeholder="Smith" />
+  <input 
+    class="input" 
+    type="search"
+    [ngStyle]="{'padding-right': addFiltersSelectors ? '47%' : '28px' }"
+    [placeholder]="inputPlaceholder" 
+  />
+  <ng-container *ngIf="addFiltersSelectors">
+    <select class="specie">
+      <option selected disabled>Especie</option>
+      <option>Todas</option>
+      <option 
+        *ngFor="let specie of speciesList | keyvalue"
+        [value]="specie.value"
+      >
+        {{specie.key}}
+      </option>
+    </select>
+    <select class="gender">
+      <option selected disabled>Género</option>
+      <option>Todos</option>
+      <option 
+        *ngFor="let gender of genderList | keyvalue"
+        [value]="gender.value"
+      >
+      {{gender.key}}
+    </option>
+    </select>
+  </ng-container>
 </div>
