@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
+import { ResultListModule } from './components/result-list/result-list.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +14,8 @@ import { BigInputModule } from './components/big-input/big-input.module';
     BrowserModule, 
     AppRoutingModule, 
     HttpClientModule,
-    BigInputModule
+    BigInputModule,
+    ResultListModule
   ],
   providers: [
     {

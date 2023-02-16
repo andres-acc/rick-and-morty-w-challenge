@@ -7,16 +7,19 @@ interface Place {
   url: string;
 }
 
-export interface Character {
+export interface BasicCharacter {
   id: number;
   name: string;
-  status: Status;
   species: Species;
-  type: string;
   gender: Gender;
+  image: string;
+}
+
+export interface Character extends BasicCharacter {
+  status: Status;
+  type: string;
   origin: Place;
   location: Place;
-  image: string;
   episode: string[];
   url: string;
   created: Date;

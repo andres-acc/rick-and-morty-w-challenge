@@ -1,0 +1,49 @@
+@import '/src/scss/colors';
+
+.box {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 10px 25px;
+  position: relative;
+
+  &:hover {
+    background-color: $gray-base;
+
+    &::before {
+      background-color: $green-portal;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 10px;
+    }
+  }
+
+  .picture {
+    border-radius: 50%;
+    width: 45px;
+  }
+
+  .name {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+
+  .specie,
+  .gender {
+    font-size: 15px;
+    position: relative;
+    color: $disabled;
+    
+    &::before {
+      content: '-';
+      position: absolute;
+      left: -10px;
+    }
+  }
+}
