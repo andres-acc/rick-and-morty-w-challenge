@@ -90,6 +90,6 @@
 
 .selected {
   border-color: $pear;
-  box-shadow: rgba(59, 181, 204, 0.25) 0px 14px 28px,
-              rgba(59, 181, 204, 0.22) 0px 10px 10px;
+  box-shadow: $shakespeare 0px 14px 28px,
+              $shakespeare 0px 10px 10px;
 }
