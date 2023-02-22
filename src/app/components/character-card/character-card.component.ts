@@ -10,9 +10,8 @@ import { basicCharacterMock } from 'src/app/mock/character.mock';
 })
 export class CharacterCardComponent {
 
-  characterSelected: FormControl = new FormControl(false);
-
   @Input() character: BasicCharacter = basicCharacterMock;
+  characterSelected: FormControl = new FormControl(false);
 
   get isCharacterSelected(): boolean {
     return this.characterSelected.value;
