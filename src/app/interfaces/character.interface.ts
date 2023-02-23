@@ -13,10 +13,10 @@ export interface BasicCharacter {
   species: Species;
   gender: Gender;
   image: string;
+  status: Status;
 }
 
 export interface Character extends BasicCharacter {
-  status: Status;
   type: string;
   origin: Place;
   location: Place;
