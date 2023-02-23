@@ -1,7 +1,7 @@
 <div [ngClass]="isCharacterSelected ? 'card selected' : 'card'">
   <img class="picture" [src]="character.image" [alt]="character.name">
-  <h2 class="title">{{ character.name }}</h2>
-  <span class="tag" [ngClass]="statusClass">{{ character.status }}</span>
+  <h2 class="title bold">{{ character.name }}</h2>
+  <span class="tag bold" [ngClass]="statusClass">{{ character.status }}</span>
   <p class="detail">
     <strong class="bold">Gender:</strong> {{ character.gender }}
   </p>

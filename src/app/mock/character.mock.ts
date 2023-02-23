@@ -1,4 +1,3 @@
-
 import { Gender } from 'src/app/helpers/enums/gender.enum';
 import { Status } from 'src/app/helpers/enums/status.enum';
 import { Species } from 'src/app/helpers/enums/species.enum';
