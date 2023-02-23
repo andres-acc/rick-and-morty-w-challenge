@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
-import { ResultListModule } from './components/result-list/result-list.module';
+import { CharacterCardModule } from './components/character-card/character-card.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +15,7 @@ import { ResultListModule } from './components/result-list/result-list.module';
     AppRoutingModule, 
     HttpClientModule,
     BigInputModule,
-    ResultListModule
+    CharacterCardModule
   ],
   providers: [
     {

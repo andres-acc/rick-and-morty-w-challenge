@@ -1,0 +1,12 @@
+<div [ngClass]="isCharacterSelected ? 'card selected' : 'card'">
+  <img class="picture" [src]="character.image" [alt]="character.name">
+  <h2 class="title bold">{{ character.name }}</h2>
+  <span class="tag bold" [ngClass]="statusClass">{{ character.status }}</span>
+  <p class="detail">
+    <strong class="bold">Gender:</strong> {{ character.gender }}
+  </p>
+  <p class="detail">
+    <strong class="bold">Species:</strong> {{ character.species }}
+  </p>
+  <input [formControl]="characterSelected" class="select" type="checkbox">
+</div>
