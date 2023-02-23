@@ -1,0 +1,25 @@
+@import '/src/scss/colors';
+
+.container {
+  border: 2px solid $green-portal;
+  border-radius: 30px;
+  box-shadow: rgba(128, 219, 226, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  padding: 20px 0;
+  width: 100%;
+  
+  .results {
+    height: 320px;
+    overflow-y: scroll;
+  
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $green-portal;
+      border-radius: 10px;
+      height: 10px;
+    }
+  }
+}
