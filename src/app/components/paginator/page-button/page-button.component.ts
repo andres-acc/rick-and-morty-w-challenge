@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-button',
@@ -6,10 +6,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./page-button.component.scss']
 })
 export class PageButtonComponent {
-  @Input() current?: boolean = true;
+  @Input() current?: boolean = false;
   @Input() dots?: boolean = false;
-  @Input() number?: number = 1;
+  @Input() number?: number;
   @Input() disabled?: boolean = false;
   @Input() rightArrow?: boolean = false;
   @Input() leftArrow?: boolean = false;
+
+  @Output() clickEvent = new EventEmitter<number>();
+
+  onClick(): void {
+    this.clickEvent.emit(this.number);
+  }
 }

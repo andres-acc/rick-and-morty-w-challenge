@@ -1,0 +1,18 @@
+<app-page-button 
+  [leftArrow]="true"
+  [disabled]="currentPage === 1"
+  (clickEvent)="goToPageFromArrow('left')"
+></app-page-button>
+<ng-container *ngFor="let page of pagesToShow">
+  <app-page-button 
+    [number]="page !== -1 ? page : undefined"
+    [dots]="page === -1"
+    [current]="page === currentPage"
+    (clickEvent)="goToPage($event)"
+  ></app-page-button>
+</ng-container>
+<app-page-button 
+  [rightArrow]="true"
+  [disabled]="currentPage === pages"
+  (clickEvent)="goToPageFromArrow('right')"
+></app-page-button>

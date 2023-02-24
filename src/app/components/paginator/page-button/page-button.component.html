@@ -7,16 +7,8 @@
     'right': rightArrow,
     'left': leftArrow,
     'disabled': disabled
-  }"> 
+  }"
+  [disabled]="disabled"
+  (click)="onClick()"> 
   {{ number }}
 </button>
-<!-- <button class="pageButton current" type="button">
-  1
-</button>
-<button class="pageButton dots" type="button">
-</button>
-<button class="pageButton" type="button">
-  22
-</button>
-<button class="pageButton right" type="button">
-</button> -->

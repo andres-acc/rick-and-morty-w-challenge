@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
+import { PaginatorModule } from './components/paginator/paginator.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { CharacterCardModule } from './components/character-card/character-card.
     AppRoutingModule, 
     HttpClientModule,
     BigInputModule,
-    CharacterCardModule
+    CharacterCardModule,
+    PaginatorModule
   ],
   providers: [
     {
