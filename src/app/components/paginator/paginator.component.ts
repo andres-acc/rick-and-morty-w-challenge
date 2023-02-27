@@ -14,35 +14,38 @@ import {
 export class PaginatorComponent implements OnInit {
   @Input() pages: number = 0;
   @Input() currentPage: number = 0;
+  @Input() visiblePages: number = 0;
   
   @Output() gotToPageEvent = new EventEmitter<number>();
 
   fullPagesList: number[] = [];
   pagesToShow: number[] = [];
+  pagesDifferential = 0;
 
   ngOnInit(): void {
+    this.pagesDifferential = (this.visiblePages / 2);
     this.fullPagesList = Array.from({length: this.pages}).map((_, i) => i+1);
     this.definePagesButtons(this.currentPage);
   }
 
   definePagesButtons(page: number): void {
-    if(this.pages > 5) {
+    if(this.pages > this.visiblePages) {
       let pagesArray = [...this.fullPagesList];
 
       pagesArray = [...pagesArray.slice(page - 1, pagesArray.length)];
 
-      if(pagesArray.length > 4) {
+      if(pagesArray.length > this.visiblePages) {
         pagesArray = [
-          ...pagesArray.splice(0, 2), 
+          ...this.getFirstButtons(pagesArray),
           -1, 
-          ...pagesArray.splice(pagesArray.length - 2, pagesArray.length)
+          ...this.getLastButtons(pagesArray),
         ];
         this.pagesToShow = pagesArray;
-      } else if(pagesArray.length === 4) {
+      } else if(pagesArray.length === this.visiblePages) {
         pagesArray = [
           -1, 
-          ...pagesArray.splice(0, 2), 
-          ...pagesArray.splice(pagesArray.length - 2, pagesArray.length)
+          ...this.getFirstButtons(pagesArray),
+          ...this.getLastButtons(pagesArray),
         ];
         this.pagesToShow = pagesArray;
       }
@@ -55,13 +58,21 @@ export class PaginatorComponent implements OnInit {
     this.definePagesButtons(page);
   }
 
-  goToPageFromArrow(arrow: 'left' | 'right'): void {
-    if(arrow === 'left') {
+  goToPageFromArrow(go: 'left' | 'right'): void {
+    if(go === 'left') {
       this.gotToPageEvent.emit(this.currentPage - 1);
       this.definePagesButtons(this.currentPage - 1);
     } else {
       this.gotToPageEvent.emit(this.currentPage + 1);
       this.definePagesButtons(this.currentPage + 1);
     }    
+  }
+
+  private getFirstButtons(pagesArray: number[]): number[] {
+    return [...pagesArray.splice(0, this.pagesDifferential)];
+  }
+
+  private getLastButtons(pagesArray: number[]): number[] {
+    return [...pagesArray.splice(pagesArray.length - this.pagesDifferential, pagesArray.length)];
   }
 }
