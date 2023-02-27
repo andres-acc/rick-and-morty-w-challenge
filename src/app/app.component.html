@@ -1,6 +1,7 @@
 <!-- <router-outlet></router-outlet> -->
 <app-paginator 
   [pages]="pages" 
-  [currentPage]="currentPage" 
+  [currentPage]="currentPage"
+  [visiblePages]="4"
   (gotToPageEvent)="changePage($event)">
 </app-paginator>
