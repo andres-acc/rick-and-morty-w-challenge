@@ -48,7 +48,9 @@ export class PaginatorComponent implements OnInit {
           ...this.getLastButtons(pagesArray),
         ];
         this.pagesToShow = pagesArray;
-      }
+      } 
+    } else {
+      this.pagesToShow = [...this.fullPagesList];
     }
   }
 
