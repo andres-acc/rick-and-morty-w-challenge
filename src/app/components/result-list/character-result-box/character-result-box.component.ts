@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Gender } from 'src/app/helpers/enums/gender.enum';
 import { BasicCharacter } from 'src/app/interfaces/character.interface';
 import { Species } from '../../../helpers/enums/species.enum';
+import { Status } from '../../../helpers/enums/status.enum';
 
 @Component({
   selector: 'app-character-result-box',
@@ -15,7 +16,8 @@ export class CharacterResultBoxComponent {
     name: 'Rick Sanchez',
     species: Species.Human,
     gender: Gender.Male,
-    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+    status: Status.Alive
   };
 
 }
