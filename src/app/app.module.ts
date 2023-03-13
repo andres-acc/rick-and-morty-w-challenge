@@ -7,15 +7,17 @@ import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
+import { TagModule } from './components/tag/tag.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
-    AppRoutingModule, 
+    BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     BigInputModule,
-    CharacterCardModule
+    CharacterCardModule,
+    TagModule
   ],
   providers: [
     {
