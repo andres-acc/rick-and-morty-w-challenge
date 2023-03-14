@@ -1,47 +1,43 @@
 @import '/src/scss/colors';
 
 @mixin arrow() {
+  border-radius: 2px;
+  border-right: 3px solid $mineshaft;
+  border-top: 3px solid $mineshaft;
   content: '';
   display: inline-block;
-  width: 6px;
   height: 6px;
-  border-top: 3px solid $mineshaft;
-  border-right: 3px solid $mineshaft;
-  border-radius: 2px;
   margin: 0 auto;
+  width: 6px;
 }
 
-.pageButton {
+.page-button {
   border: 1px solid $mineshaft;
   border-radius: 5px;
   font-weight: bold;
   height: 32px;
-  width: 35px;
-  transition: all 300ms;
   margin: 5px;
+  transition: all 300ms;
+  width: 35px;
 
   &:hover {
     border-color: $wolox-blue;
   }
 }
 
-.left {
-  &::after {
-    @include arrow;
-    transform: rotate(225deg);
-  }
+.left::after {
+  @include arrow;
+  transform: rotate(225deg);
 }
 
-.right {
-  &::after {
-    @include arrow;
-    transform: rotate(45deg);
-  }
+.right::after {
+  @include arrow;
+  transform: rotate(45deg);
 }
 
 .disabled {
-  border: none;
   background-color: $gallery;
+  border: none;
   cursor: not-allowed;
   
   &::after {
@@ -54,9 +50,7 @@
   color: $wolox-blue;
 }
 
-.dots {
-  &::after {
-    content: '...';
-    letter-spacing: 2px;
-  }
+.dots::after {
+  content: '...';
+  letter-spacing: 2px;
 }
