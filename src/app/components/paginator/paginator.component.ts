@@ -16,7 +16,7 @@ export class PaginatorComponent implements OnInit {
   @Input() currentPage: number = 0;
   @Input() visiblePages: number = 0;
   
-  @Output() gotToPageEvent = new EventEmitter<number>();
+  @Output() goToPageEvent = new EventEmitter<number>();
 
   fullPagesList: number[] = [];
   pagesToShow: number[] = [];
@@ -26,6 +26,18 @@ export class PaginatorComponent implements OnInit {
     this.pagesDifferential = (this.visiblePages / 2);
     this.fullPagesList = Array.from({length: this.pages}).map((_, i) => i+1);
     this.definePagesButtons(this.currentPage);
+  }
+
+  getDisplayNumber(page: number): number | undefined {
+    return page !== -1 ? page : undefined;
+  }
+
+  isDots(page: number): boolean {
+    return page === -1;
+  }
+
+  isCurrentPage(page: number): boolean {
+    return page === this.currentPage;
   }
 
   definePagesButtons(page: number): void {
@@ -56,18 +68,14 @@ export class PaginatorComponent implements OnInit {
 
   goToPage(page: number): void {
     if(!page) return;
-    this.gotToPageEvent.emit(page);
+    this.goToPageEvent.emit(page);
     this.definePagesButtons(page);
   }
 
   goToPageFromArrow(go: 'left' | 'right'): void {
-    if(go === 'left') {
-      this.gotToPageEvent.emit(this.currentPage - 1);
-      this.definePagesButtons(this.currentPage - 1);
-    } else {
-      this.gotToPageEvent.emit(this.currentPage + 1);
-      this.definePagesButtons(this.currentPage + 1);
-    }    
+    const newPage = go === 'left' ? this.currentPage - 1 : this.currentPage + 1;
+    this.goToPageEvent.emit(newPage);
+    this.definePagesButtons(newPage);
   }
 
   private getFirstButtons(pagesArray: number[]): number[] {
