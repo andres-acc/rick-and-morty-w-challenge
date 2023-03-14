@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Gender } from 'src/app/helpers/enums/gender.enum';
 import { BasicCharacter } from 'src/app/interfaces/character.interface';
-import { Species } from '../../../helpers/enums/species.enum';
-import { Status } from '../../../helpers/enums/status.enum';
+import { Species } from 'src/app/helpers/enums/species.enum';
+import { Status } from 'src/app/helpers/enums/status.enum';
 
 @Component({
   selector: 'app-character-result-box',
