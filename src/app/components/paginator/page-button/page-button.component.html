@@ -1,0 +1,14 @@
+<button 
+  type="button"
+  class="page-button"
+  [ngClass]="{
+    'current': current,
+    'dots': dots,
+    'right': rightArrow,
+    'left': leftArrow,
+    'disabled': disabled
+  }"
+  [disabled]="disabled"
+  (click)="onClick()"> 
+  {{ number }}
+</button>
