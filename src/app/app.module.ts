@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
+import { AccordionComponent } from './components/accordion/accordion.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AccordionComponent],
   imports: [
     BrowserModule, 
     AppRoutingModule, 

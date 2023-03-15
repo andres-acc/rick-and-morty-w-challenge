@@ -1,0 +1,32 @@
+@import '/src/scss/colors';
+
+.container {
+  margin-top: 20px;
+  width: 100%;
+  .accordion {
+    border-bottom: 1px solid $concrete;
+    margin: 10px 60px;
+    padding-bottom: 10px;
+    .heading {
+      color: $dusty-gray;
+      cursor: pointer;
+      display: flex;
+      font-size: 14px;
+      font-weight: 400;
+      justify-content: space-between;
+      .icon {
+        margin-left: 80px;
+        width: 15px;
+        height: 15px;
+        transition: transform 0.2s ease-in-out;
+      }
+      .rotate {
+        transform: rotate(-180deg);
+      }
+    }
+    .content {
+      margin: 0;
+      padding: 10px;
+    }
+  }
+}
