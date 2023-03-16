@@ -8,9 +8,10 @@ import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
 import { TagModule } from './components/tag/tag.module';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ButtonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
