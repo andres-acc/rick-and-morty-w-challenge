@@ -7,16 +7,17 @@ import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
-import { AccordionComponent } from './components/accordion/accordion.component';
+import { AccordionModule } from './components/accordion/accordion.module';
 
 @NgModule({
-  declarations: [AppComponent, AccordionComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule, 
     AppRoutingModule, 
     HttpClientModule,
     BigInputModule,
-    CharacterCardModule
+    CharacterCardModule,
+    AccordionModule,
   ],
   providers: [
     {
