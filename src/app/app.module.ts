@@ -8,6 +8,7 @@ import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
 import { TagModule } from './components/tag/tag.module';
+import { ButtonModule } from './components/button/button.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,8 @@ import { TagModule } from './components/tag/tag.module';
     HttpClientModule,
     BigInputModule,
     CharacterCardModule,
-    TagModule
+    TagModule,
+    ButtonModule
   ],
   providers: [
     {
