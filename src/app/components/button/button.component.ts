@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { ButtonItem } from 'src/app/interfaces/button.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,5 +6,10 @@ import { ButtonItem } from 'src/app/interfaces/button.interface';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent  {
-  @Input() content: ButtonItem = {name: 'Female'}
+  @Input() content: string = 'Female';
+  @Output() action = new EventEmitter<void>();
+
+  buttonAction(): void {
+    this.action.emit();
+  }
 }
