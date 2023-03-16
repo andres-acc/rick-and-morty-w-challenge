@@ -1,2 +1,7 @@
 <!-- <router-outlet></router-outlet> -->
 <app-button></app-button>
+<app-paginator 
+  [pages]="pages" 
+  [currentPage]="currentPage" 
+  (gotToPageEvent)="changePage($event)">
+</app-paginator>
