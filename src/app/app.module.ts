@@ -9,6 +9,7 @@ import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
 import { TagModule } from './components/tag/tag.module';
 import { ButtonModule } from './components/button/button.module';
+import { PaginatorModule } from './components/paginator/paginator.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { ButtonModule } from './components/button/button.module';
     BigInputModule,
     CharacterCardModule,
     TagModule,
-    ButtonModule
+    ButtonModule,
+    PaginatorModule
   ],
   providers: [
     {
