@@ -22,4 +22,10 @@ export class AppComponent {
     content: ['Female', 'Male', 'Genderless', 'Unknown'],
     toggle: false,
   }];
+  pages: number = 10;
+  currentPage: number = 1;
+
+  changePage(page: number): void {
+    this.currentPage = page;
+  }
 }

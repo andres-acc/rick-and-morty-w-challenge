@@ -1,0 +1,31 @@
+@import '/src/scss/colors';
+
+:host {
+  align-items: center;
+  background: $white;
+  border-radius: 50px;
+  border: 1px solid $cerulean;
+  box-sizing: border-box;
+  color: $cerulean;
+  display: flex;
+  height: 37px;
+  justify-content: space-between;
+  padding: 8px 16px;
+  position: absolute;
+  width: 118px;
+}
+
+.clear-icon {
+  background-image: url('/assets/images/svg/clear-icon-blue.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 18px;
+  min-width: 18px;
+}
+
+.tag {
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
