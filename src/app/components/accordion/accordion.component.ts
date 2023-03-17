@@ -9,7 +9,6 @@ import { AccordionItem } from '../../interfaces/accordion.interface';
 
 export class AccordionComponent{
   @Input() panels: AccordionItem[] = [];
-  upArrow = 'assets/images/png/up-arrow.png';
 
   togglePanel(index:number) {
     this.panels[index].toggle = !this.panels[index].toggle;
