@@ -1,8 +1,8 @@
 <div class="container">
   <div class="accordion" *ngFor="let panel of panels; let i = index">
-    <div class="heading" (click)="togglePanel(i)">
+    <div class="header" (click)="togglePanel(i)">
       <span>{{ panel.title }}</span>
-      <img class="icon" [src]="upArrow" [class.rotate]="panel.toggle" />
+      <i class="icon" [class.rotate]="panel.toggle"></i>
     </div>
     <div class="content" [hidden]="!panel.toggle">
       <app-button [content]="button" *ngFor="let button of panel.content"></app-button>
