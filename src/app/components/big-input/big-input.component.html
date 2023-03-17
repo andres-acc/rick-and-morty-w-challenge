@@ -3,11 +3,16 @@
     class="input" 
     type="search"
     [ngStyle]="{'padding-right': addFiltersSelectors ? '47%' : '28px' }"
-    [placeholder]="inputPlaceholder" 
+    [placeholder]="inputPlaceholder"
+    [formControl]="searchControl" 
   />
   <ng-container *ngIf="addFiltersSelectors">
-    <select class="specie">
-      <option selected disabled>Especie</option>
+    <select 
+      class="specie" 
+      [formControl]="specieFormControl" 
+      (change)="onChangeSpecie()"
+    >
+      <option disabled value="">Especie</option>
       <option>Todas</option>
       <option 
         *ngFor="let specie of speciesList | keyvalue"
@@ -16,8 +21,12 @@
         {{specie.key}}
       </option>
     </select>
-    <select class="gender">
-      <option selected disabled>Género</option>
+    <select 
+      class="gender"
+      [formControl]="genderFormControl" 
+      (change)="onChangeGender()"
+    >
+      <option disabled value="">Género</option>
       <option>Todos</option>
       <option 
         *ngFor="let gender of genderList | keyvalue"
