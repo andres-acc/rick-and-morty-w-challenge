@@ -5,7 +5,7 @@
       <img class="icon" [src]="upArrow" [class.rotate]="panel.toggle" />
     </div>
     <div class="content" [hidden]="!panel.toggle">
-      {{ panel.content }}
+      <app-button [content]="button" *ngFor="let button of panel.content"></app-button>
     </div>
   </div>
 </div>
