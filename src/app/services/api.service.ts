@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { CharacterResponseData } from '../interfaces/character-response-data.interface';
-import { Character } from '../interfaces/character.interface';
+import { Character, BasicCharacter } from '../interfaces/character.interface';
 import { FilterParams } from '../interfaces/filter-params.interface';
 
 @Injectable()
@@ -25,9 +25,21 @@ export class ApiService {
     return this.http.get<Character[]>(`${this.API_URL}/character/${ids}`);
   }
 
-  filterCharacters(params: FilterParams): Observable<CharacterResponseData> {
+  filterCharacters(params: FilterParams): Observable<BasicCharacter[]> {
     return this.http.get<CharacterResponseData>(`${this.API_URL}/character`, {
       params: { ...params },
-    });
+    }).pipe(
+      map(response => response.results.map(character => {
+        const { image, name, gender, species, id, status } = character;
+        return {
+          image,
+          name,
+          gender,
+          species,
+          id,
+          status
+        }
+      })),
+    );
   }
 }
