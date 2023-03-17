@@ -25,7 +25,16 @@ export class AppComponent {
   pages: number = 10;
   currentPage: number = 1;
 
-  changePage(page: number): void {
-    this.currentPage = page;
+  handleInputChange(input: string) {
+    console.log(input);
   }
+
+  handleGenderChange(value: string) {
+    console.log(value);
+  }
+
+  handleSpecieChange(value: string) {
+    console.log(value);
+  }
+
 }
