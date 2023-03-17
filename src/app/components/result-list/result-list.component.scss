@@ -1,10 +1,12 @@
 @import '/src/scss/colors';
 
 .container {
-  border: 2px solid $green-portal;
+  background-color: $white;
+  border: 2px solid $pear;
   border-radius: 30px;
   box-shadow: rgba(128, 219, 226, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   padding: 20px 0;
+  position: relative;
   width: 100%;
   
   .results {
@@ -17,7 +19,7 @@
     }
     
     &::-webkit-scrollbar-thumb {
-      background-color: $green-portal;
+      background-color: $pear;
       border-radius: 10px;
       height: 10px;
     }
