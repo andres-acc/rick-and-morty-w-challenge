@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { BigInputModule } from './components/big-input/big-input.module';
 import { CharacterCardModule } from './components/character-card/character-card.module';
+import { AccordionModule } from './components/accordion/accordion.module';
 import { TagModule } from './components/tag/tag.module';
 import { ButtonModule } from './components/button/button.module';
 import { PaginatorModule } from './components/paginator/paginator.module';
@@ -19,6 +20,7 @@ import { PaginatorModule } from './components/paginator/paginator.module';
     HttpClientModule,
     BigInputModule,
     CharacterCardModule,
+    AccordionModule,
     TagModule,
     ButtonModule,
     PaginatorModule
