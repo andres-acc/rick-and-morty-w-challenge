@@ -10,9 +10,10 @@ import { CharacterCardModule } from './components/character-card/character-card.
 import { TagModule } from './components/tag/tag.module';
 import { ButtonModule } from './components/button/button.module';
 import { PaginatorModule } from './components/paginator/paginator.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,4 +33,4 @@ import { PaginatorModule } from './components/paginator/paginator.module';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
