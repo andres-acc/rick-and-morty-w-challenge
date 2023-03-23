@@ -1,0 +1,21 @@
+@mixin text-sm {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+}
+
+@mixin text-regular {
+  font-weight: 400;
+}
+
+@mixin text-medium {
+  font-weight: 500;
+}
+
+@mixin text-bold {
+  font-weight: 700;
+}
+
+@mixin text-extra-bold {
+  font-weight: 900;
+}

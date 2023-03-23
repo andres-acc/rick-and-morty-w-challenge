@@ -1,0 +1,73 @@
+@import '/src/scss/colors';
+@import '/src/scss/mixins/text';
+@import '/src/scss/sizes';
+
+.footer-section {
+  align-items: center;
+  background: $alabaster;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+  position: absolute;
+  width: $full-size;
+
+  .left-section {
+    display: flex;
+  }
+
+  .vertical-line {
+    border-right: 1px solid $black-border-footer;
+    padding: 0 16px;
+  }
+
+  .floating-image {
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -50px;
+  }
+
+  .rick-and-mortimer-running {
+    height: 96px;
+    left: 730px;
+    width: 174px;
+  }
+
+  .space-cruiser {
+    height: 112px;
+    left: 930px;
+    width: 213px;
+  }
+
+  .accenture-logo {
+    height: 27px;
+    width: 105px;
+  }
+
+  .logo-wolox {
+    height: 24px;
+    width: 86px;
+  }
+
+  .social-icon {
+    height: 16px;
+    width: 16px;
+  }
+
+  .social-text {
+    @include text-medium();
+    @include text-sm();
+    color: $cod-gray;
+    height: 17px;
+    padding: 0 8px;
+    text-decoration-line: underline;
+    width: 160px;
+  }
+
+  .social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 26px;
+  }
+}
