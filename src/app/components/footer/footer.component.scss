@@ -5,55 +5,46 @@
 .footer-section {
   align-items: center;
   background: $alabaster;
-  bottom: 0%;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   padding: 24px 32px;
   position: absolute;
   width: $full-size;
 
-  .elements-container {
-    border-right: 1px solid $black-border-footer;
+  .left-section {
     display: flex;
+  }
+
+  .vertical-line {
+    border-right: 1px solid $black-border-footer;
     padding: 0 16px;
   }
 
-  .floating-images {
+  .floating-image {
     background-repeat: no-repeat;
     position: absolute;
     top: -50px;
   }
 
   .rick-and-mortimer-running {
-    background: url('/assets/images/svg/rick-and-mortimer-running300x167.svg');
     height: 96px;
     left: 730px;
     width: 174px;
   }
 
   .space-cruiser {
-    background: url('/assets/images/svg/space-cruiser.svg');
     height: 112px;
     left: 930px;
     width: 213px;
   }
 
-  .linked-in {
-    background: url('/assets/images/svg/linked-in-logo.svg');
-  }
-
-  .suit-case {
-    background: url('/assets/images/svg/suit-case.svg');
-  }
-
   .accenture-logo {
-    background: url('/assets/images/svg/accenture-logo.svg');
     height: 27px;
     width: 105px;
   }
 
   .logo-wolox {
-    background: url('/assets/images/svg/wolox-logo.svg');
     height: 24px;
     width: 86px;
   }
@@ -78,9 +69,5 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 26px;
-  }
-
-  .left-section {
-    display: flex;
   }
 }
