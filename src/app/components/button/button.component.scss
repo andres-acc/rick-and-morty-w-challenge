@@ -1,11 +1,30 @@
 @import '/src/scss/colors';
 
+:host {
+  margin: 0 auto;
+}
+
 .button {
   background-color: $cerulean;
   border-radius: 50px;
   color: $white;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 18px;
   margin: 10px 10px 10px 0;
   padding: 15px;
+  position: relative;
+  transition: all 300ms;
+
+  &:hover {
+    background-color: $deep-cerulean;
+  }
+
+  .badge {
+    background-color: $pear;
+    border-radius: 50%;
+    color: $black;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 3px 8px;
+  }
 }
