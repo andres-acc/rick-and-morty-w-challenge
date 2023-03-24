@@ -11,7 +11,7 @@
     ></app-big-input>
     <div class="results" *ngIf="charactersList.length > 0">
       <app-result-list [characters]="charactersList"></app-result-list>
-      <app-button content="Buscar resultados"></app-button>
+      <app-button content="Buscar resultados" [badge]="characterResultCounter"></app-button>
     </div>
   </section>
 </div>
