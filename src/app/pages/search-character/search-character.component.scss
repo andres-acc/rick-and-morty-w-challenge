@@ -1,7 +1,7 @@
 @import '/src/scss/colors';
 
 .main-page {
-  height: 80vh;
+  min-height: 90vh;
 
   .header {
     background-color: $white;
@@ -32,8 +32,10 @@
 
   .input {
     margin: -50px auto;
+    margin-bottom: 15px;
     min-width: 585px;
-    width: 50%;
+    max-width: 1165px;
+    width: 80%;
 
     &::before {
       content: '';
@@ -46,6 +48,11 @@
       position: absolute;
       right: 0px;
       top: 40vh;
+    }
+
+    .results {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
