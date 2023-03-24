@@ -10,10 +10,10 @@
   position: relative;
 
   &:hover {
-    background-color: $gray-base;
+    background-color: $gallery;
 
     &::before {
-      background-color: $green-portal;
+      background-color: $pear;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
       content: '';

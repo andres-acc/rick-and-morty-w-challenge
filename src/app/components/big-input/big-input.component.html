@@ -13,7 +13,7 @@
       (change)="onChangeSpecie()"
     >
       <option disabled value="">Especie</option>
-      <option>Todas</option>
+      <option value="">Todas</option>
       <option 
         *ngFor="let specie of speciesList | keyvalue"
         [value]="specie.value"
@@ -27,7 +27,7 @@
       (change)="onChangeGender()"
     >
       <option disabled value="">Género</option>
-      <option>Todos</option>
+      <option value="">Todos</option>
       <option 
         *ngFor="let gender of genderList | keyvalue"
         [value]="gender.value"

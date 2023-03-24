@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { BasicCharacter } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'app-result-list',
@@ -6,7 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./result-list.component.scss']
 })
 export class ResultListComponent {
-
-  characters = Array.from({length: 50});
-
+  @Input() characters: BasicCharacter[] = [];
 }
