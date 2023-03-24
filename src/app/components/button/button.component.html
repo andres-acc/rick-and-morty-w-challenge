@@ -1,1 +1,7 @@
-<button class="button" [title]="content" (click)="buttonAction()">{{ content }}</button>
+<button 
+  class="button" 
+  [title]="content" 
+  (click)="buttonAction()">
+    {{ content }}
+    <span *ngIf="badge > 0" class="badge">{{badge}}</span>
+</button>
