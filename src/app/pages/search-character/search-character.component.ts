@@ -39,7 +39,7 @@ export class SearchCharacterComponent {
       species: this.currentSpecie,
       status: '',
       type: ''
-    }
+    };
     this.apiService.filterCharacters(params)
       .subscribe({
         next: (res) => {
@@ -48,6 +48,6 @@ export class SearchCharacterComponent {
         error: () => {
           this.charactersList = [];
         }
-      })
+      });
   }
 }

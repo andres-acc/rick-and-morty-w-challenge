@@ -8,8 +8,7 @@
       (onInputChange)="handleInputChange($event)"
       (onGenderSelectorChange)="handleGenderChange($event)"
       (onSpecieSelectorChange)="handleSpecieChange($event)"
-    >
-    </app-big-input>
+    ></app-big-input>
     <ng-container *ngIf="charactersList.length > 0">
       <app-result-list [characters]="charactersList"></app-result-list>
     </ng-container>
