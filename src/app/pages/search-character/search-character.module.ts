@@ -6,6 +6,7 @@ import { SearchCharacterComponent } from './search-character.component';
 import { SearchCharacterRoutingModule } from './search-character-routing.module';
 import { ApiService } from '../../services/api.service';
 import { ResultListModule } from '../../components/result-list/result-list.module';
+import { ButtonModule } from '../../components/button/button.module';
 
 @NgModule({
   declarations: [SearchCharacterComponent],
@@ -13,7 +14,8 @@ import { ResultListModule } from '../../components/result-list/result-list.modul
     CommonModule,
     BigInputModule, 
     SearchCharacterRoutingModule,
-    ResultListModule
+    ResultListModule,
+    ButtonModule
   ],
   providers: [
     ApiService

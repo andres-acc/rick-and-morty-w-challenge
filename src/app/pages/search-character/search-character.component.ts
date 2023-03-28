@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FilterParams } from '../../interfaces/filter-params.interface';
-import { BasicCharacter } from '../../interfaces/character.interface';
+import { BasicCharacter, Character } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'app-search-character',
@@ -14,6 +14,7 @@ export class SearchCharacterComponent {
   currentGender: string = '';
   currentSpecie: string = '';
   charactersList: BasicCharacter[] = [];
+  characterResultCounter = 0;
 
   constructor(private readonly apiService: ApiService) {}
 
@@ -43,10 +44,12 @@ export class SearchCharacterComponent {
     this.apiService.filterCharacters(params)
       .subscribe({
         next: (res) => {
-          this.charactersList = res.slice(0, 5);
+          this.charactersList = res.results.slice(0, 5);
+          this.characterResultCounter = res.counter;
         },
         error: () => {
           this.charactersList = [];
+          this.characterResultCounter = 0;
         }
       });
   }

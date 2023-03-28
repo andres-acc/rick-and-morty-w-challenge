@@ -9,8 +9,9 @@
       (onGenderSelectorChange)="handleGenderChange($event)"
       (onSpecieSelectorChange)="handleSpecieChange($event)"
     ></app-big-input>
-    <ng-container *ngIf="charactersList.length > 0">
+    <div class="results" *ngIf="charactersList.length > 0">
       <app-result-list [characters]="charactersList"></app-result-list>
-    </ng-container>
+      <app-button content="Buscar resultados" [badge]="characterResultCounter"></app-button>
+    </div>
   </section>
 </div>
