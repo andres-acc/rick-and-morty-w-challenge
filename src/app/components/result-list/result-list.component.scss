@@ -10,8 +10,13 @@
   width: 100%;
   
   .results {
-    height: 320px;
+    max-height: 320px;
     overflow-y: scroll;
+
+    .no-results {
+      padding-left: 20px;
+      font-size: large;
+    }
   
     &::-webkit-scrollbar {
       background-color: transparent;

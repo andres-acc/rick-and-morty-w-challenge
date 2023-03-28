@@ -1,7 +1,16 @@
-<div class="container">
+<div class="container" *ngIf="!characters; else results">
   <section class="results">
-    <ng-container *ngFor="let character of characters">
-      <app-character-result-box [character]="character"></app-character-result-box>
-    </ng-container>
+    <h1 class="no-results">
+      No se encontraron resultados asociados a la búsqueda
+    </h1>
   </section>
 </div>
+
+<ng-template #results>
+  <div class="container" *ngIf="characters!.length > 0">
+    <app-character-result-box 
+      *ngFor="let character of characters" 
+      [character]="character">
+    </app-character-result-box>
+  </div>
+</ng-template>
