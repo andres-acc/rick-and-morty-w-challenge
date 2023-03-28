@@ -13,7 +13,7 @@ export class SearchCharacterComponent {
   currentInput: string = '';
   currentGender: string = '';
   currentSpecie: string = '';
-  charactersList: BasicCharacter[] = [];
+  charactersList: BasicCharacter[] | null = [];
   characterResultCounter = 0;
 
   constructor(private readonly apiService: ApiService) {}
@@ -47,8 +47,8 @@ export class SearchCharacterComponent {
           this.charactersList = res.results.slice(0, 5);
           this.characterResultCounter = res.counter;
         },
-        error: () => {
-          this.charactersList = [];
+        error: (err) => {
+          this.charactersList = null;
           this.characterResultCounter = 0;
         }
       });
