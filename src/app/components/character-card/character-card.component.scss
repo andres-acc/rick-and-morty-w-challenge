@@ -14,7 +14,7 @@
   padding: 8px 15px;
   position: relative;
   width: 100%;
-  
+
   .picture {
     border-radius: 10px;
     height: 180px;
@@ -26,7 +26,7 @@
     color: $wolox-blue;
     font-size: 20px;
   }
-  
+
   .tag {
     border-radius: 5px;
     color: white;
@@ -36,11 +36,11 @@
   .alive {
     background-color: $pear;
   }
-  
+
   .dead {
     background-color: $crimson;
   }
-  
+
   .unknown {
     background-color: $disabled;
   }
@@ -60,7 +60,7 @@
     cursor: pointer;
     height: 35px;
     position: absolute;
-    right: 20px; 
+    right: 20px;
     -webkit-appearance: none;
     width: 35px;
 

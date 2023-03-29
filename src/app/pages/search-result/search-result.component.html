@@ -5,3 +5,22 @@
     [addFiltersSelectors]="false"
   ></app-big-input>
 </header>
+<section class="search-result-container">
+  <!-- <nav class="search-result-nav">
+    <app-accordion [panels]="panels"></app-accordion>
+  </nav> -->
+  <div class="character-list-container">
+    <section class="character-list">
+      <ng-container *ngFor="let character of characters">
+        <app-character-card [character]="character"></app-character-card>
+      </ng-container>
+    </section>
+    <app-paginator
+      class="paginator"
+      [pages]="pages"
+      [currentPage]="currentPage"
+      [visiblePages]="4"
+      (goToPageEvent)="goToPage($event)"
+    ></app-paginator>
+  </div>
+</section>
