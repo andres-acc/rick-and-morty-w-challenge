@@ -1,5 +1,7 @@
+@import '/src/scss/colors';
+
 .search-result-header {
-  border-bottom: 1px solid #DBDBDB;
+  border-bottom: 1px solid $alto;
   display: flex;
   gap: 20px;
   padding: 0 60px;
