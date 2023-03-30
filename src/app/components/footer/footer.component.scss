@@ -5,11 +5,11 @@
 .footer-section {
   align-items: center;
   background: $alabaster;
-  bottom: 0;
   display: flex;
+  height: 10vh;
   justify-content: space-between;
   padding: 24px 32px;
-  position: absolute;
+  position: relative;
   width: $full-size;
 
   .left-section {
@@ -23,20 +23,16 @@
 
   .floating-image {
     background-repeat: no-repeat;
+    bottom: 15px;
     position: absolute;
-    top: -50px;
   }
 
   .rick-and-mortimer-running {
-    height: 96px;
-    left: 730px;
-    width: 174px;
+    right: 30%;
   }
 
   .space-cruiser {
-    height: 112px;
-    left: 930px;
-    width: 213px;
+    right: 10%;
   }
 
   .accenture-logo {

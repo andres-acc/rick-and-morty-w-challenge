@@ -1,5 +1,7 @@
 <div class="container">
   <section class="results">
-    <app-character-result-box *ngFor="let character of characters"></app-character-result-box>
+    <ng-container *ngFor="let character of characters">
+      <app-character-result-box [character]="character"></app-character-result-box>
+    </ng-container>
   </section>
 </div>

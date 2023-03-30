@@ -1,9 +1,26 @@
 <div class="main-page">
-  <header class="header">Header here!</header>
+  <header class="header">
+    <img
+      class="header-img"
+      src="/assets/images/svg/rick-and-morty-the-browser.svg"
+      alt="rick-and-morty-the-browser"
+    />
+  </header>
   <section class="presentation">
     <h1 class="title">Encuentra a tu personaje favorito</h1>
   </section>
   <section class="input">
-    <app-big-input></app-big-input>
+    <app-big-input
+      (onInputChange)="handleInputChange($event)"
+      (onGenderSelectorChange)="handleGenderChange($event)"
+      (onSpecieSelectorChange)="handleSpecieChange($event)"
+    ></app-big-input>
+    <div class="results" *ngIf="charactersList.length > 0">
+      <app-result-list [characters]="charactersList"></app-result-list>
+      <app-button
+        content="Buscar resultados"
+        [badge]="characterResultCounter"
+      ></app-button>
+    </div>
   </section>
 </div>

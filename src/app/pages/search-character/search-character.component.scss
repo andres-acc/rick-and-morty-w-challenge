@@ -1,25 +1,34 @@
 @import '/src/scss/colors';
 
 .main-page {
-  height: 80vh;
+  min-height: 90vh;
 
   .header {
+    align-items: center;
     background-color: $white;
+    display: flex;
     height: 20vh;
+    justify-content: center;
+
+    .header-img {
+      height: 100px;
+      position: absolute;
+      width: 280px;
+    }
   }
 
   .presentation {
     align-items: center;
-    background-image: 
-      linear-gradient(360deg, $cerulean 0%, $pear 100%), 
+    background-image:
+      linear-gradient(to bottom, $pear-rgba, $cerulean),
       url('/assets/images/main-presentation-background.png');
-    background-repeat: no-repeat;
     background-position: 10% 25%;
+    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     height: 20vh;
     justify-content: center;
-    
+
     .title {
       color: $white;
       font-size: 26px;
@@ -32,20 +41,27 @@
 
   .input {
     margin: -50px auto;
+    margin-bottom: 15px;
+    max-width: 1165px;
     min-width: 585px;
-    width: 50%;
+    width: 80%;
 
     &::before {
-      content: '';
       background: url('/assets/images/main-background.png');
       background-repeat: no-repeat;
       background-size: cover;
       bottom: 0px;
+      content: '';
       left: 0px;
       opacity: 0.15;
       position: absolute;
       right: 0px;
       top: 40vh;
+    }
+
+    .results {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

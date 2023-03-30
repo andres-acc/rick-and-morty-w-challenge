@@ -1,1 +1,8 @@
-<button class="button" [title]="content" (click)="buttonAction()">{{ content }}</button>
+<button 
+  class="button" 
+  [title]="content" 
+  (click)="buttonAction()"
+>
+  {{ content }}
+  <span class="badge">{{badge}}</span>
+</button>
