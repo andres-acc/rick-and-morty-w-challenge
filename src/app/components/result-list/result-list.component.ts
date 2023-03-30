@@ -7,5 +7,5 @@ import { BasicCharacter } from '../../interfaces/character.interface';
   styleUrls: ['./result-list.component.scss']
 })
 export class ResultListComponent {
-  @Input() characters: BasicCharacter[] = [];
+  @Input() characters: BasicCharacter[] | null = [];
 }

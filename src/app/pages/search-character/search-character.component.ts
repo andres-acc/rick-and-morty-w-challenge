@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FilterParams } from '../../interfaces/filter-params.interface';
-import { BasicCharacter, Character } from '../../interfaces/character.interface';
+import { BasicCharacter } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'app-search-character',
@@ -9,11 +9,10 @@ import { BasicCharacter, Character } from '../../interfaces/character.interface'
   styleUrls: ['./search-character.component.scss'],
 })
 export class SearchCharacterComponent {
-
   currentInput: string = '';
   currentGender: string = '';
   currentSpecie: string = '';
-  charactersList: BasicCharacter[] = [];
+  charactersList: BasicCharacter[] | null = [];
   characterResultCounter = 0;
 
   constructor(private readonly apiService: ApiService) {}
@@ -39,18 +38,17 @@ export class SearchCharacterComponent {
       name: this.currentInput,
       species: this.currentSpecie,
       status: '',
-      type: ''
+      type: '',
     };
-    this.apiService.filterCharacters(params)
-      .subscribe({
-        next: (res) => {
-          this.charactersList = res.results.slice(0, 5);
-          this.characterResultCounter = res.counter;
-        },
-        error: () => {
-          this.charactersList = [];
-          this.characterResultCounter = 0;
-        }
-      });
+    this.apiService.filterCharacters(params).subscribe({
+      next: (res) => {
+        this.charactersList = res.results.slice(0, 5);
+        this.characterResultCounter = res.counter;
+      },
+      error: () => {
+        this.charactersList = null;
+        this.characterResultCounter = 0;
+      },
+    });
   }
 }
