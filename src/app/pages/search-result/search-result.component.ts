@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterResponseData } from '../../interfaces/character-response-data.interface';
-import { Character } from '../../interfaces/character.interface';
+import { BasicCharacterResponse, CharacterResponseData } from '../../interfaces/character-response-data.interface';
+import { BasicCharacter, Character } from '../../interfaces/character.interface';
 import { FilterParams } from '../../interfaces/filter-params.interface';
 import { ApiService } from '../../services/api.service';
 
@@ -10,7 +10,7 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./search-result.component.scss'],
 })
 export class SearchResultComponent implements OnInit {
-  characters: Character[] = [];
+  characters: BasicCharacter[] = [];
   currentPage: number = 1;
   pages: number = 0;
   charactersCount: number = 0;
@@ -23,11 +23,11 @@ export class SearchResultComponent implements OnInit {
 
   getCharacters(page: number, params: FilterParams = {}): void {
     this.service
-      .filterCharacters(page, params)
-      .subscribe((response: CharacterResponseData) => {
+      .filterCharacters(params, page)
+      .subscribe((response: BasicCharacterResponse) => {
         this.characters = response.results;
-        this.charactersCount = response.info.count;
-        this.pages = response.info.pages;
+        this.charactersCount = response.counter;
+        this.pages = response.pages;
       });
   }
 
@@ -35,5 +35,9 @@ export class SearchResultComponent implements OnInit {
     if (this.currentPage === page) return;
     this.currentPage = page;
     this.getCharacters(page);
+  }
+
+  onInputChange(name: string): void {
+    this.getCharacters(1, { name });
   }
 }

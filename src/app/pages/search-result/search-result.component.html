@@ -1,8 +1,9 @@
 <header class="search-result-header">
-  <img src="assets/images/rick-and-morty-the-browser.svg" alt="Rick and Morty The Browser" />
+  <img src="assets/images/svg/rick-and-morty-the-browser.svg" alt="Rick and Morty The Browser" />
   <app-big-input
     class="input-filter"
     [addFiltersSelectors]="false"
+    (onInputChange)="onInputChange($event)"
   ></app-big-input>
 </header>
 <section class="search-result-container">

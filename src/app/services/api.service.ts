@@ -25,14 +25,15 @@ export class ApiService {
     return this.http.get<Character[]>(`${this.API_URL}/character/${ids}`);
   }
 
-  filterCharacters(params: FilterParams): Observable<BasicCharacterResponse> {
+  filterCharacters(params: FilterParams, page?: number): Observable<BasicCharacterResponse> {
     return this.http
-      .get<CharacterResponseData>(`${this.API_URL}/character`, {
+      .get<CharacterResponseData>(`${this.API_URL}/character?page=${page}`, {
         params: { ...params },
       })
       .pipe(
         map((response) => {
           return {
+            pages: response.info.pages,
             counter: response.info.count,
             results: response.results.map((character) => {
               const { image, name, gender, species, id, status } = character;

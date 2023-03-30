@@ -7,6 +7,7 @@ export interface CharacterResponseData {
 }
 
 export interface BasicCharacterResponse {
+  pages: number;
   counter: number;
   results: BasicCharacter[];
 }
