@@ -11,3 +11,32 @@
   display: inline-block;
   width: 540px;
 }
+
+.search-result-container {
+  display: flex;
+  gap: 20px;
+  padding: 30px 60px 70px;
+}
+
+.search-result-nav {
+  max-width: 260px;
+  width: 100%;
+}
+
+.character-list-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+
+  .character-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+.paginator {
+  margin: 0 auto;
+}

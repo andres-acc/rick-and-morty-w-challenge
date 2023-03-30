@@ -13,8 +13,8 @@ export class ApiService {
 
   constructor(private readonly http: HttpClient) {}
 
-  getAllCharacters(): Observable<CharacterResponseData> {
-    return this.http.get<CharacterResponseData>(`${this.API_URL}/character`);
+  getAllCharacters(page: number): Observable<CharacterResponseData> {
+    return this.http.get<CharacterResponseData>(`${this.API_URL}/character?page=${page}`);
   }
 
   getCharacter(id: number): Observable<Character> {
@@ -25,8 +25,8 @@ export class ApiService {
     return this.http.get<Character[]>(`${this.API_URL}/character/${ids}`);
   }
 
-  filterCharacters(params: FilterParams): Observable<CharacterResponseData> {
-    return this.http.get<CharacterResponseData>(`${this.API_URL}/character`, {
+  filterCharacters(page: number,params: FilterParams): Observable<CharacterResponseData> {
+    return this.http.get<CharacterResponseData>(`${this.API_URL}/character?page=${page}`, {
       params: { ...params },
     });
   }

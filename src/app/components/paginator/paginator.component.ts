@@ -1,28 +1,30 @@
-import { 
-  Component, 
-  EventEmitter, 
-  Input, 
-  OnInit, 
-  Output 
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output
 } from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
   templateUrl: './paginator.component.html',
-  styleUrls: ['./paginator.component.scss']
+  styleUrls: ['./paginator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PaginatorComponent implements OnInit {
+export class PaginatorComponent implements OnChanges {
   @Input() pages: number = 0;
   @Input() currentPage: number = 0;
   @Input() visiblePages: number = 0;
-  
+
   @Output() goToPageEvent = new EventEmitter<number>();
 
   fullPagesList: number[] = [];
   pagesToShow: number[] = [];
   pagesDifferential = 0;
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.pagesDifferential = (this.visiblePages / 2);
     this.fullPagesList = Array.from({length: this.pages}).map((_, i) => i+1);
     this.definePagesButtons(this.currentPage);
@@ -49,18 +51,18 @@ export class PaginatorComponent implements OnInit {
       if(pagesArray.length > this.visiblePages) {
         pagesArray = [
           ...this.getFirstButtons(pagesArray),
-          -1, 
+          -1,
           ...this.getLastButtons(pagesArray),
         ];
         this.pagesToShow = pagesArray;
       } else if(pagesArray.length === this.visiblePages) {
         pagesArray = [
-          -1, 
+          -1,
           ...this.getFirstButtons(pagesArray),
           ...this.getLastButtons(pagesArray),
         ];
         this.pagesToShow = pagesArray;
-      } 
+      }
     } else {
       this.pagesToShow = [...this.fullPagesList];
     }
