@@ -1,1 +1,27 @@
-<p>search-result works!</p>
+<header class="search-result-header">
+  <img src="assets/images/svg/rick-and-morty-the-browser.svg" alt="Rick and Morty The Browser" />
+  <app-big-input
+    class="input-filter"
+    [addFiltersSelectors]="false"
+    (onInputChange)="onInputChange($event)"
+  ></app-big-input>
+</header>
+<section class="search-result-container">
+  <!-- <nav class="search-result-nav">
+    <app-accordion [panels]="panels"></app-accordion>
+  </nav> -->
+  <div class="character-list-container">
+    <section class="character-list">
+      <ng-container *ngFor="let character of characters">
+        <app-character-card [character]="character"></app-character-card>
+      </ng-container>
+    </section>
+    <app-paginator
+      class="paginator"
+      [pages]="pages"
+      [currentPage]="currentPage"
+      [visiblePages]="4"
+      (goToPageEvent)="goToPage($event)"
+    ></app-paginator>
+  </div>
+</section>
