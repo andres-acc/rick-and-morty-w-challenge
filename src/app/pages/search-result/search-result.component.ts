@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicCharacterResponse, CharacterResponseData } from '../../interfaces/character-response-data.interface';
-import { BasicCharacter, Character } from '../../interfaces/character.interface';
+import { BasicCharacterResponse } from '../../interfaces/character-response-data.interface';
+import { BasicCharacter } from '../../interfaces/character.interface';
 import { FilterParams } from '../../interfaces/filter-params.interface';
 import { ApiService } from '../../services/api.service';
+import { filtersPanel } from '../../constants/filters.constants';
 
 @Component({
   selector: 'app-search-result',
@@ -14,6 +15,7 @@ export class SearchResultComponent implements OnInit {
   currentPage: number = 1;
   pages: number = 0;
   charactersCount: number = 0;
+  readonly filtersPanel = filtersPanel;
 
   constructor(private readonly service: ApiService) {}
 
