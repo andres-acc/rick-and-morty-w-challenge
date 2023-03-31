@@ -8,10 +8,19 @@ import { AccordionModule } from '../../components/accordion/accordion.module';
 import { CharacterCardModule } from '../../components/character-card/character-card.module';
 import { ApiService } from '../../services/api.service';
 import { PaginatorModule } from '../../components/paginator/paginator.module';
+import { TagModule } from '../../components/tag/tag.module';
 
 @NgModule({
   declarations: [SearchResultComponent],
-  imports: [CommonModule, SearchResultRoutingModule, BigInputModule, AccordionModule, CharacterCardModule, PaginatorModule],
+  imports: [
+    CommonModule, 
+    SearchResultRoutingModule, 
+    BigInputModule, 
+    AccordionModule, 
+    CharacterCardModule, 
+    PaginatorModule,
+    TagModule
+  ],
   providers: [ApiService]
 })
 export class SearchResultModule {}

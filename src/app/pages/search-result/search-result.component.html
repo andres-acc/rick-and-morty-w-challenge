@@ -11,6 +11,13 @@
     <app-accordion [panels]="filtersPanel"></app-accordion>
   </nav>
   <div class="character-list-container">
+    <div class="tags-container">
+      <app-tag 
+        *ngFor="let selectedFilter of selectedFilters; let i = index"
+        (removeTag)="removeFilter($event)"
+        [tag]="selectedFilter"
+      ></app-tag>
+    </div>
     <section class="character-list">
       <ng-container *ngFor="let character of characters">
         <app-character-card [character]="character"></app-character-card>
