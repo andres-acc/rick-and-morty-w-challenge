@@ -9,6 +9,7 @@
         [content]="button"
         size="small"
         *ngFor="let button of panel.content"
+        (action)="selectUnselectFilter(panel.filterKey, button)"
       >
       </app-button>
     </div>

@@ -7,10 +7,10 @@ import { Tag } from 'src/app/interfaces/tag.interface';
   styleUrls: ['./tag.component.scss']
 })
 export class TagComponent {
-  @Input() tag: Tag = { id: 0, name: 'Tag Dummy'};
-  @Output() removeTag = new EventEmitter<void>();
+  @Input() tag: Tag = { key: 'name', name: 'Tag Dummy'};
+  @Output() removeTag = new EventEmitter<Tag>();
 
   onRemove(): void {
-    this.removeTag.emit();
+    this.removeTag.emit(this.tag);
   }
 }
