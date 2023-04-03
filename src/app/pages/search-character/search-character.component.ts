@@ -40,6 +40,8 @@ export class SearchCharacterComponent {
 
   goToResults(): void {
     this.filtersService.addFilter('name', this.currentInput);
+    this.filtersService.addFilter('species', this.currentSpecie);
+    this.filtersService.addFilter('gender', this.currentGender);
     this.router.navigateByUrl('/search-result');
   }
 

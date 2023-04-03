@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { BasicCharacterResponse } from '../../interfaces/character-response-data.interface';
 import { BasicCharacter } from '../../interfaces/character.interface';
@@ -25,21 +26,18 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly service: ApiService,
-    private readonly filtersService: FiltersService
+    private readonly filtersService: FiltersService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.getCharacters(this.currentPage, this.filtersService.currentFilters);
+    this.setFilters();
     this.filtersService.filtersSubject$
     .pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(() => {
-      this.selectedFilters = Object.entries(
-        this.filtersService.currentFilters)
-        .filter((filter) => filter[1] !== '')
-        .map(filter => {
-          return { key: filter[0], name: filter[1] }
-        });
+      this.setFilters();
         this.getCharacters(0, this.filtersService.currentFilters);
     });
   }
@@ -51,6 +49,10 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
   get currentNameFilter(): string {
     return this.filtersService.currentFilters.name || '';
+  }
+
+  goToMainPage(): void {
+    this.router.navigateByUrl('');
   }
 
   getCharacters(page: number, params: FilterParams = {}): void {
@@ -75,5 +77,14 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
   removeFilter(tag: Tag): void {
     this.filtersService.removeFilter(tag.key as Filters);
+  }
+
+  private setFilters(): void {
+    this.selectedFilters = Object.entries(
+      this.filtersService.currentFilters)
+      .filter((filter) => filter[1] !== '' && filter[0] !== 'name')
+      .map(filter => {
+        return { key: filter[0], name: filter[1] }
+      });
   }
 }

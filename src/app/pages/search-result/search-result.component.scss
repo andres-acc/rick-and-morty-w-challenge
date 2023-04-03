@@ -6,6 +6,10 @@
   gap: 20px;
   padding: 0 60px;
 
+  .app-logo {
+    cursor: pointer;
+  }
+
   .input-filter {
     display: inline-block;
     width: 540px;
