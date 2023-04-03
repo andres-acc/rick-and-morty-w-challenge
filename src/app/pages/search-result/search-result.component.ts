@@ -29,7 +29,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.getCharacters(this.currentPage);
+    this.getCharacters(this.currentPage, this.filtersService.currentFilters);
     this.filtersService.filtersSubject$
     .pipe(
       takeUntil(this.unsubscribe$)
@@ -47,6 +47,10 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribe$.next(null);
     this.unsubscribe$.complete();
+  }
+
+  get currentNameFilter(): string {
+    return this.filtersService.currentFilters.name || '';
   }
 
   getCharacters(page: number, params: FilterParams = {}): void {
