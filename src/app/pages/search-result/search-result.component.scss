@@ -33,19 +33,19 @@
     gap: 16px;
 
     .flex-content {
+      align-items: center;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
     .select {
-      margin: auto 10px;
-      padding: 5px 16px;
+      -webkit-appearance: auto;
       background: $white;
       border: 1px solid $cerulean;
       border-radius: 100px;
       color: $dusty-gray;
-      -webkit-appearance: auto;
+      margin: auto 10px;
+      padding: 5px 16px;
     }
 
     .result-text-right {
