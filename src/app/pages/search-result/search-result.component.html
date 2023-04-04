@@ -11,6 +11,22 @@
     <app-accordion [panels]="panels"></app-accordion>
   </nav> -->
   <div class="character-list-container">
+    <header class="flex-content result-text-rigth">
+      <span>Resultados obtenidos: {{ characters.length }}</span>
+      <div class="flex-content result-text-left">
+        Resultados mostrados
+        <select class="select" [value]="0">
+          <option disabled value="0">12</option>
+        </select>
+      </div>
+    </header>
+    <div class="tags-container">
+      <app-tag
+        *ngFor="let selectedFilter of selectedFilters; let i = index"
+        (removeTag)="removeFilter($event)"
+        [tag]="selectedFilter"
+      ></app-tag>
+    </div>
     <section class="character-list">
       <ng-container *ngFor="let character of characters">
         <app-character-card [character]="character"></app-character-card>
