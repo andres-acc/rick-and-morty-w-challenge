@@ -1,4 +1,5 @@
 @import '/src/scss/colors';
+@import '/src/scss/mixins/text';
 
 .search-result-header {
   border-bottom: 1px solid $alto;
@@ -13,7 +14,7 @@
   .input-filter {
     display: inline-block;
     width: 540px;
-  }  
+  }
 }
 
 .search-result-container {
@@ -31,12 +32,38 @@
     flex-flow: column nowrap;
     gap: 16px;
 
+    .flex-content {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .select {
+      -webkit-appearance: auto;
+      background: $white;
+      border: 1px solid $cerulean;
+      border-radius: 100px;
+      color: $dusty-gray;
+      margin: auto 10px;
+      padding: 5px 16px;
+    }
+
+    .result-text-right {
+      @include text-md;
+      color: $emperorApprox;
+    }
+
+    .result-text-left {
+      @include text-normal;
+      color: $dusty-gray;
+    }
+
     .tags-container {
       display: flex;
       gap: 10px;
     }
-  
-    .character-list{
+
+    .character-list {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -47,6 +74,6 @@
     .paginator {
       margin: 0 auto;
     }
-    
+
   }
 }
