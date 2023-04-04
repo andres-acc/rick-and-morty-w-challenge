@@ -17,7 +17,7 @@
     <app-accordion [panels]="filtersPanel"></app-accordion>
   </nav>
   <div class="character-list-container">
-    <header class="flex-content result-text-rigth">
+    <div class="flex-content result-text-rigth">
       <span>Resultados obtenidos: {{ characters.length }}</span>
       <div class="flex-content result-text-left">
         Resultados mostrados
@@ -25,7 +25,7 @@
           <option disabled value="0">12</option>
         </select>
       </div>
-    </header>
+    </div>
     <div class="tags-container">
       <app-tag 
         *ngFor="let selectedFilter of selectedFilters; let i = index"
