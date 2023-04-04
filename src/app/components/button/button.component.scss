@@ -1,4 +1,5 @@
 @import '/src/scss/colors';
+@import '/src/scss/sizes';
 
 .button {
   background-color: $cerulean;
@@ -22,15 +23,15 @@
 }
 
 .medium {
-  font-size: 15px;
-  line-height: 18px;
+  font-size: $regular-font;
+  line-height: $regular-font-height;
   margin: 10px 10px 10px 0;
   padding: 15px;
 }
 
 .small {
-  font-size: 12px;
-  line-height: 15px;
+  font-size: $small-font;
+  line-height: $small-font-height;
   margin: 5px ;
   padding: 10px;
 }

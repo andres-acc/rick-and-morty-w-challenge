@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { CharacterService } from '../../services/character.service';
 import { FilterParams } from '../../interfaces/filter-params.interface';
 import { BasicCharacter } from '../../interfaces/character.interface';
 import { FiltersService } from '../../services/filters.service';
@@ -18,7 +18,7 @@ export class SearchCharacterComponent {
   characterResultCounter = 0;
 
   constructor(
-    private readonly apiService: ApiService,
+    private readonly characterService: CharacterService,
     private readonly filtersService: FiltersService,
     private router: Router
   ) {}
@@ -53,7 +53,7 @@ export class SearchCharacterComponent {
       status: '',
       type: '',
     };
-    this.apiService.filterCharacters(params).subscribe({
+    this.characterService.filterCharacters(params).subscribe({
       next: (res) => {
         this.charactersList = res.results.slice(0, 5);
         this.characterResultCounter = res.counter;

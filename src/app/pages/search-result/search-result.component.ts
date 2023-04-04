@@ -4,7 +4,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { BasicCharacterResponse } from '../../interfaces/character-response-data.interface';
 import { BasicCharacter } from '../../interfaces/character.interface';
 import { FilterParams } from '../../interfaces/filter-params.interface';
-import { ApiService } from '../../services/api.service';
+import { CharacterService } from '../../services/character.service';
 import { filtersPanel } from '../../constants/filters.constants';
 import { FiltersService } from '../../services/filters.service';
 import { Tag } from '../../interfaces/tag.interface';
@@ -25,7 +25,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<null> = new Subject();
 
   constructor(
-    private readonly service: ApiService,
+    private readonly characterService: CharacterService,
     private readonly filtersService: FiltersService,
     private router: Router
   ) {}
@@ -34,12 +34,11 @@ export class SearchResultComponent implements OnInit, OnDestroy {
     this.getCharacters(this.currentPage, this.filtersService.currentFilters);
     this.setFilters();
     this.filtersService.filtersSubject$
-    .pipe(
-      takeUntil(this.unsubscribe$)
-    ).subscribe(() => {
-      this.setFilters();
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        this.setFilters();
         this.getCharacters(0, this.filtersService.currentFilters);
-    });
+      });
   }
 
   ngOnDestroy(): void {
@@ -56,7 +55,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   }
 
   getCharacters(page: number, params: FilterParams = {}): void {
-    this.service
+    this.characterService
       .filterCharacters(params, page)
       .subscribe((response: BasicCharacterResponse) => {
         this.characters = response.results;
@@ -80,11 +79,10 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   }
 
   private setFilters(): void {
-    this.selectedFilters = Object.entries(
-      this.filtersService.currentFilters)
+    this.selectedFilters = Object.entries(this.filtersService.currentFilters)
       .filter((filter) => filter[1] !== '' && filter[0] !== 'name')
-      .map(filter => {
-        return { key: filter[0], name: filter[1] }
+      .map((filter) => {
+        return { key: filter[0], name: filter[1] };
       });
   }
 }
