@@ -1,4 +1,5 @@
+import { Filters } from '../types/filters.types';
 export interface Tag {
-  id: number;
+  key: Filters | string;
   name: string;
 }

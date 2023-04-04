@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { FilterParams } from '../../interfaces/filter-params.interface';
 import { BasicCharacter } from '../../interfaces/character.interface';
+import { FiltersService } from '../../services/filters.service';
 
 @Component({
   selector: 'app-search-character',
@@ -15,7 +17,11 @@ export class SearchCharacterComponent {
   charactersList: BasicCharacter[] | null = [];
   characterResultCounter = 0;
 
-  constructor(private readonly apiService: ApiService) {}
+  constructor(
+    private readonly apiService: ApiService,
+    private readonly filtersService: FiltersService,
+    private router: Router
+  ) {}
 
   handleInputChange(input: string) {
     this.currentInput = input;
@@ -30,6 +36,13 @@ export class SearchCharacterComponent {
   handleSpecieChange(value: string) {
     this.currentSpecie = value;
     this.getCharacters();
+  }
+
+  goToResults(): void {
+    this.filtersService.addFilter('name', this.currentInput);
+    this.filtersService.addFilter('species', this.currentSpecie);
+    this.filtersService.addFilter('gender', this.currentGender);
+    this.router.navigateByUrl('/search-result');
   }
 
   private getCharacters(): void {
