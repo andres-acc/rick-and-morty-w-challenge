@@ -1,5 +1,5 @@
 <button 
-  class="button" 
+  [class]="size === 'medium' ? 'button medium' : 'button small'" 
   [title]="content" 
   (click)="buttonAction()"
 >

@@ -18,7 +18,9 @@
     <div class="results">
       <app-result-list [characters]="charactersList"></app-result-list>
       <app-button
+        class="search-button"
         content="Buscar resultados"
+        (action)="goToResults()"
         [badge]="characterResultCounter"
       ></app-button>
     </div>

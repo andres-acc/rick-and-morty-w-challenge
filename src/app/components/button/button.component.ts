@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
   @Input() content: string = 'Female';
   @Input() badge: number = 0;
+  @Input() size: 'medium' | 'small' = 'medium';
   @Output() action = new EventEmitter<void>();
 
   buttonAction(): void {

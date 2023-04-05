@@ -1,16 +1,38 @@
 <header class="search-result-header">
-  <img src="assets/images/svg/rick-and-morty-the-browser.svg" alt="Rick and Morty The Browser" />
+  <img 
+    src="assets/images/svg/rick-and-morty-the-browser.svg"
+    class="app-logo"
+    (click)="goToMainPage()"
+    alt="Rick and Morty The Browser" 
+  />
   <app-big-input
     class="input-filter"
     [addFiltersSelectors]="false"
+    [initialNameValue]="currentNameFilter"
     (onInputChange)="onInputChange($event)"
   ></app-big-input>
 </header>
 <section class="search-result-container">
-  <!-- <nav class="search-result-nav">
-    <app-accordion [panels]="panels"></app-accordion>
-  </nav> -->
+  <nav class="search-result-nav">
+    <app-accordion [panels]="filtersPanel"></app-accordion>
+  </nav>
   <div class="character-list-container">
+    <div class="flex-content result-text-rigth">
+      <span>Resultados obtenidos: {{ characters.length }}</span>
+      <div class="flex-content result-text-left">
+        Resultados mostrados
+        <select class="select" [value]="0">
+          <option disabled value="0">12</option>
+        </select>
+      </div>
+    </div>
+    <div class="tags-container">
+      <app-tag 
+        *ngFor="let selectedFilter of selectedFilters; let i = index"
+        (removeTag)="removeFilter($event)"
+        [tag]="selectedFilter"
+      ></app-tag>
+    </div>
     <section class="character-list">
       <ng-container *ngFor="let character of characters">
         <app-character-card [character]="character"></app-character-card>

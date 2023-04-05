@@ -4,11 +4,11 @@ import { map, Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { CharacterResponseData, BasicCharacterResponse } from '../interfaces/character-response-data.interface';
-import { Character, BasicCharacter } from '../interfaces/character.interface';
+import { Character } from '../interfaces/character.interface';
 import { FilterParams } from '../interfaces/filter-params.interface';
 
 @Injectable()
-export class ApiService {
+export class CharacterService {
   private readonly API_URL = environment.API_URL;
 
   constructor(private readonly http: HttpClient) {}

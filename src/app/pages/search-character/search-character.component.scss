@@ -62,6 +62,10 @@
     .results {
       display: flex;
       flex-direction: column;
+
+      .search-button {
+        margin: 0 auto;
+      }
     }
   }
 }
