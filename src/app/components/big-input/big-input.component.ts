@@ -18,6 +18,7 @@ import { Species } from '../../helpers/enums/species.enum';
 export class BigInputComponent implements OnInit {
   @Input() inputPlaceholder: string = 'Smith';
   @Input() addFiltersSelectors: boolean = true;
+  @Input() initialNameValue: string = '';
   @Output() onInputChange: EventEmitter<string> = new EventEmitter();
   @Output() onSpecieSelectorChange: EventEmitter<string> = new EventEmitter();
   @Output() onGenderSelectorChange: EventEmitter<string> = new EventEmitter();
@@ -27,6 +28,7 @@ export class BigInputComponent implements OnInit {
   genderFormControl: FormControl = new FormControl('');
 
   ngOnInit(): void {
+    this.searchControl.setValue(this.initialNameValue);
     this.searchControl.valueChanges.pipe(
       debounceTime(2000),
       distinctUntilChanged()

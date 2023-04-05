@@ -1,7 +1,19 @@
 @mixin text-sm {
   font-size: 11px;
-  line-height: 16px;
   letter-spacing: 0.04em;
+  line-height: 16px;
+}
+
+@mixin text-normal {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  line-height: 21px;
+}
+
+@mixin text-md {
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  line-height: 27px;
 }
 
 @mixin text-regular {

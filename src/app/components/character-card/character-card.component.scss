@@ -13,23 +13,28 @@
   max-width: 250px;
   padding: 8px 15px;
   position: relative;
-  width: 100%;
+  width: 212px;
 
   .picture {
     border-radius: 10px;
     height: 180px;
     object-fit: cover;
-    width: 100%;
+    width: 180px;
   }
 
   .title {
     color: $wolox-blue;
     font-size: 20px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
   }
 
   .tag {
     border-radius: 5px;
-    color: white;
+    color: $white;
     padding: 3px 5px;
   }
 
@@ -65,7 +70,7 @@
     width: 35px;
 
     &:checked {
-      border-color: black;
+      border-color: $black;
 
       &::before {
         border-bottom: 4px solid $wolox-blue;
