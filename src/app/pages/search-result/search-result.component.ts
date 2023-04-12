@@ -67,11 +67,12 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   goToPage(page: number): void {
     if (this.currentPage === page) return;
     this.currentPage = page;
-    this.getCharacters(page);
+    this.getCharacters(page, this.filtersService.currentFilters);
   }
 
   onInputChange(name: string): void {
     this.getCharacters(1, { name });
+    this.filtersService.addFilter('name', name);
   }
 
   removeFilter(tag: Tag): void {
