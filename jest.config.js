@@ -1,4 +1,7 @@
 module.exports = {
+  moduleNameMapper: {
+    '^src/(.*)': '<rootDir>/src/$1',
+  },
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
   collectCoverage: true,
@@ -7,5 +10,5 @@ module.exports = {
   testMatch: ['**/+(*.)+(spec).+(ts)'],
   setupFilesAfterEnv: ['<rootDir>/src/test.ts'],
   collectCoverage: true,
-  coverageReporters: ['html', 'text']
+  coverageReporters: ['html', 'text'],
 };
